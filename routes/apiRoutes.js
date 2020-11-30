@@ -11,12 +11,22 @@ router.post('/notes', (req, res) => {
     req.body.id = uuidv4();
     fs.readFile(path.join(__dirname, '../db/db.json'), (err, data) => {
         if (err) throw err;
-        const json = JSON.parse(data);
-        json.push(req.body);
-        fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(json), (err) => {
-            if (err) throw err;
-            console.log('The file has been saved!');
-        })
+        if (data.length !== 0) {
+            const json = JSON.parse(data);
+            json.push(req.body);
+            fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(json), (err) => {
+                if (err) throw err;
+                console.log('The file has been saved!');
+            })
+        }
+        else {
+            const json = [];
+            json.push(req.body);
+            fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(json), (err) => {
+                if (err) throw err;
+                console.log('The file has been saved!');
+            })
+        }
     })
     res.redirect('/notes');
 });
