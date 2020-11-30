@@ -28,7 +28,7 @@ router.post('/notes', (req, res) => {
             })
         }
     })
-    res.redirect('/notes');
+    res.end();
 });
 
 router.delete('/notes/:id', (req, res) => {
@@ -46,7 +46,7 @@ router.delete('/notes/:id', (req, res) => {
             }
         })
     });
-    res.redirect(200, '/notes');
+    res.end();
 });
 
 module.exports = router;
