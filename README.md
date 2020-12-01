@@ -35,6 +35,19 @@ Once you are on the main page, click "Get Started".  Enter the title of the note
 <br/>
 <br/>
 
+## Screenshot Desktop
+
+![note taker desktop](./public/assets/images/desktop.PNG)
+
+<br/>
+<br/>
+
+## Screenshot Mobile
+
+![note taker mobile](./public/assets/images/mobile.PNG)
+
+<br/>
+<br/>
 
 ## License
 
